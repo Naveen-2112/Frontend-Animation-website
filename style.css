@@ -1,0 +1,388 @@
+*
+{
+    box-sizing:border-box;
+    margin:0;
+    padding: 0;
+    font-family: 'montserrat';
+    color:#fff;
+}
+body,html
+{
+    width: 100%;
+    height: 100%;
+}
+#cursor
+{
+    width: 20px;
+    height:20px;
+    background-color: rgb(119, 2, 125);
+    position: fixed;
+    z-index: 99;
+    border-radius: 50%;
+    pointer-events: none;
+}
+#cursor-blur
+{
+    width: 300px;
+    height:300px;
+    background-color: rgb(151, 4, 168);
+    position: fixed;
+    z-index: 9;
+    border-radius: 50%;
+    filter: blur(70px);
+    pointer-events: none;
+}
+#nav
+{
+    height: 150px;
+    width:100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 150px;
+    position: fixed;
+    gap:50px;
+    z-index: 99;
+}
+#nav img
+{
+    height: 80px;
+}
+#nav
+{
+    text-transform: uppercase;
+}
+video
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+#main
+{
+    position: relative;
+    background-color: rgba(0, 0,0, 0.35);
+}
+#page1
+{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+#page1 h1
+{
+    font-size: 140px;
+    font-weight: 900;
+    position: relative;
+}
+#page1 h1::before
+{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    color: rgb(213, 65, 235);
+    z-index: -1;
+    -webkit-text-stroke: 2px blueviolet;
+    
+}
+#page1 h2
+{
+    font-size: 30px;
+    font-weight: 900;
+}
+#page1 p
+{
+    font-size: 15px;
+    font-weight: 500;
+}
+#page2
+{
+    height: 130vh;
+    width: 100%;
+    z-index: 10;
+}
+#scroller
+{
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* z-index: 10;
+    position: relative; */
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller-in-1
+{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#scroller h4{
+    display: inline-block;
+    font-size: 80px;
+    margin-left: 5px;
+    color:transparent;
+    -webkit-text-stroke:2px blueviolet;
+    transition: all linear 0.4s;
+}
+#scroller h4:hover
+{
+    color: blueviolet;
+}
+
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+#about-us
+{
+    height: 300px;
+    width: 100%;
+    /* background-color: rgb(7, 62, 110); */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    z-index: 10;
+    padding: 0 50px;
+}
+#about-us img
+{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+#about-us-in
+{
+    text-align: center;
+    width: 50%;
+}
+#about-us-in h3
+{
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+#about-us-in p
+{
+    font-size: 20px;
+    line-height: 26px;
+}
+#cards-container
+{
+    height: 45vh;
+    width: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+   
+}
+.card
+{
+    height: 70%;
+    width: 20%;
+    /* background-color: azure; */
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    z-index: 10;
+    overflow: hidden;
+}
+#card1
+{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card2
+{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-1024x1024.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card3
+{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+.overlay
+{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(130, 5, 149);
+    padding:30px;
+    padding-top: 70px;
+    opacity: 0;
+    
+}
+.overlay h4
+{
+    font-size: 27px;
+    font-weight: 800;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.overlay p{
+    font-size:16px;
+}
+.overlay:hover
+{
+    opacity: 1;
+}
+.card:hover
+{
+    transform: rotate3d(1,1,0,-20deg);
+}
+#purple-container
+{
+    height: 28vh;
+    background:linear-gradient(to left bottom,rgb(118, 3, 138),black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+}
+#purple-container img{
+    height: 100%;
+    z-index: 10;
+}
+#purple-container h4{
+    font-size: 24px;
+    z-index: 10;
+}
+#page3
+{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+#page3>p
+{
+    width: 60%;
+    font-size: 30px;
+    text-align: center;
+    z-index: 10;
+    font-weight: 400;
+}
+#page3 img{
+    height: 40px;
+}
+#page3 #quote1
+{
+    position: absolute;
+    top:27%;
+    left:18%;
+    z-index: 10;
+}
+#page3 #quote2
+{
+    position: absolute;
+    bottom:33%;
+    right:16%;
+    z-index: 10;
+}
+
+#page4
+{
+    width: 100%;
+    height: 70vh;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:70px;
+    position: relative;
+    
+}
+#page4 .elem
+{
+    width: 23%;
+    height: 70%;
+    overflow: hidden;
+    /* z-index: 10; */
+    position: relative;
+    border-radius: 15px;
+}
+
+.elem h2{
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(to right top,purple ,black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    position: absolute;
+    /* transition: all ease 0.5sec; */
+    z-index: 10;
+}
+.elem img{
+    width: 100%;
+    height: 100%;
+    /* transition: all ease 0.5sec; */
+    object-fit: cover;
+    /* scale:1.1; */
+}
+.elem:hover h2
+{
+    color: #000000;
+    background-color: transparent;
+}
+/* .elem:hover img
+{
+    scale:1;
+} */
+#page4 h1{
+    position: absolute;
+    font-size: 65px;
+    top:5%;
+    -webkit-text-stroke: 1.5px #f9f2f2;
+    color: transparent;
+}
+#footer
+{
+    width: 100%;
+    height: 50vh;
+    background:linear-gradient(to right top,purple ,black);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap:15%;
+}
+#footer > img {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    z-index: 0;
+  }
+#f1 img {
+    height: 100px;
+    position: relative;
+    z-index: 99;
+}
+#f1,#f2,#f3#f4
+{
+    font-size: 20px;
+    text-transform: uppercase;
+}
